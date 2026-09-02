@@ -301,7 +301,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
 
   return (
     <section
-      className="grid grid-cols-[1fr_1.15fr] border-t border-[#9fc2ce] bg-[#e8f7fa] pl-[12vw] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw]"
+      className="grid grid-cols-[1fr_1.15fr] items-center border-t border-[#9fc2ce] bg-[#e8f7fa] pl-[12vw] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw]"
       id="industries"
     >
       <div className="flex flex-col items-start justify-center py-[130px] pr-[8vw] max-[700px]:pb-[85px] max-[700px]:pt-[85px]">
@@ -331,7 +331,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
         </button>
       </div>
       <div
-        className="group relative min-h-[500px] overflow-hidden rounded-l-3xl border border-[#102a43]/15 bg-[#102a43] shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px] max-[700px]:rounded-3xl"
+        className="group relative mr-[5vw] h-[520px] min-h-0 overflow-hidden rounded-3xl border border-[#102a43]/15 bg-[#102a43] shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:mr-[-8vw] max-[700px]:h-[360px]"
         onMouseEnter={() => setIsSliderPaused(true)}
         onMouseLeave={() => setIsSliderPaused(false)}
         onFocus={() => setIsSliderPaused(true)}
@@ -349,7 +349,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
         <span className="absolute left-7 top-7 rounded-full border border-[#72e0f5]/60 bg-[#081c2d]/75 px-3 py-2 font-mono text-[9px] uppercase tracking-[1px] text-[#72e0f5] backdrop-blur-sm">
           Built for busy seasons
         </span>
-        <div className="absolute bottom-[30px] left-[30px] right-[30px] flex justify-between border-t border-white/50 pt-3 font-mono text-[10px] uppercase text-[#f5fbff]">
+        <div className="absolute bottom-[30px] left-[30px] right-[30px] flex justify-between border-t border-white/50 pt-3 pr-[150px] font-mono text-[10px] uppercase text-[#f5fbff] max-[700px]:pr-0">
           <span>Residential & commercial HVAC</span>
           <span>Service area / USA</span>
         </div>
