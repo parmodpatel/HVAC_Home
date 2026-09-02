@@ -25,7 +25,7 @@ function Brand({ onClick }: { onClick: () => void }) {
       </span>
       <span className="transition-colors group-hover:text-[#72e0f5]">
         AIRSIDE{" "}
-        <b className="mt-0.5 block text-[8px] tracking-[2.8px] text-[#aab3ab]">
+        <b className="mt-0.5 block text-[8px] tracking-[2.8px] text-[#a8bfca]">
           DIGITAL
         </b>
       </span>
@@ -68,16 +68,16 @@ export function SiteHeader({
   };
 
   return (
-    <header className="absolute z-10 flex h-[82px] w-full items-center justify-between border border-white/15 bg-[#081c2d]/90 px-[5vw] shadow-[0_8px_30px_rgba(0,0,0,.12)] backdrop-blur-xl max-[700px]:h-[70px] max-[700px]:rounded-b-3xl max-[700px]:px-[6vw]">
+    <header className="absolute z-10 flex h-[82px] w-full items-center justify-between border rounded-4xl border-white/15 bg-[#081c2d]/90 px-[5vw] shadow-[0_8px_30px_rgba(0,0,0,.12)] backdrop-blur-xl max-[700px]:h-[70px] max-[700px]:rounded-b-3xl max-[700px]:px-[6vw]">
       <Brand onClick={() => onScrollTo("top")} />
       <button
-        className="group hidden h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 max-[1100px]:grid"
+        className="group relative hidden h-11 w-11 rounded-full border border-white/15 bg-white/5 transition-colors hover:border-[#72e0f5]/60 hover:bg-[#72e0f5]/10 focus:outline-none focus:ring-2 focus:ring-[#72e0f5]/40 max-[1100px]:block"
         onClick={onMenuToggle}
         aria-label={menuOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={menuOpen}
       >
-        <span className={`mx-auto block h-px w-5 bg-[#f5fbff] transition-transform duration-200 ${menuOpen ? "translate-y-1 rotate-45" : "-translate-y-1"}`} />
-        <span className={`mx-auto block h-px w-5 bg-[#f5fbff] transition-transform duration-200 ${menuOpen ? "-translate-y-0 rotate-[-45deg]" : "translate-y-1"}`} />
+        <span className={`absolute left-1/2 top-1/2 block h-px w-5 -translate-x-1/2 bg-[#f5fbff] transition-all duration-200 group-hover:bg-[#72e0f5] ${menuOpen ? "-translate-y-1/2 rotate-45" : "-translate-y-[5px]"}`} />
+        <span className={`absolute left-1/2 top-1/2 block h-px w-5 -translate-x-1/2 bg-[#f5fbff] transition-all duration-200 group-hover:bg-[#72e0f5] ${menuOpen ? "-translate-y-1/2 rotate-[-45deg]" : "translate-y-[5px]"}`} />
       </button>
       <nav
         className={`${menuOpen ? "flex" : "hidden"} absolute right-[5vw] top-[82px] z-20 w-[340px] flex-col items-stretch gap-1 border border-white/15 bg-[#0b2238] p-[18px] shadow-[0_24px_60px_rgba(0,0,0,.3)] min-[1101px]:static min-[1101px]:z-auto min-[1101px]:flex min-[1101px]:w-auto min-[1101px]:flex-row min-[1101px]:items-center min-[1101px]:gap-[22px] min-[1101px]:border-0 min-[1101px]:bg-transparent min-[1101px]:p-0 min-[1101px]:shadow-none max-[1100px]:left-0 max-[1100px]:right-0 max-[1100px]:top-[82px] max-[1100px]:w-auto max-[1100px]:max-h-[calc(100vh-94px)] max-[1100px]:overflow-y-auto max-[1100px]:rounded-b-3xl max-[1100px]:border-t max-[1100px]:border-[#72e0f5]/20 max-[1100px]:px-[6vw] max-[1100px]:py-6 max-[700px]:top-[70px]`}
@@ -124,14 +124,14 @@ export function SiteHeader({
                 </span>
               </button>
               <div
-                className={`${dropdownClass} static w-full border-0 bg-transparent p-0 shadow-none transition-[opacity,transform] duration-200 min-[701px]:absolute min-[701px]:left-[-26px] min-[701px]:top-[calc(100%+4px)] ${dropdownWidthClass} min-[701px]:rounded-2xl min-[701px]:border min-[701px]:border-white/15 min-[701px]:bg-[#202a26]/95 min-[701px]:p-3 min-[701px]:shadow-[0_22px_55px_rgba(0,0,0,.35)] min-[701px]:backdrop-blur-xl min-[701px]:group-hover:visible min-[701px]:group-hover:opacity-100 min-[701px]:group-hover:pointer-events-auto ${serviceGridClass}`}
+                className={`${dropdownClass} static w-full border-0 bg-transparent p-0 shadow-none transition-[opacity,transform] duration-200 min-[701px]:absolute min-[701px]:left-[-26px] min-[701px]:top-[calc(100%+4px)] ${dropdownWidthClass} min-[701px]:rounded-2xl min-[701px]:border min-[701px]:border-[#72e0f5]/20 min-[701px]:bg-[#0b2238] min-[701px]:p-3 min-[701px]:shadow-[0_22px_55px_rgba(0,0,0,.35)] min-[701px]:backdrop-blur-xl min-[701px]:group-hover:visible min-[701px]:group-hover:opacity-100 min-[701px]:group-hover:pointer-events-auto ${serviceGridClass}`}
               >
                 {group.label === "Services" && (
-                  <div className="col-span-full mb-2 rounded-xl border border-white/10 bg-[#18211e] px-4 py-3.5">
-                    <p className="mb-1 font-mono text-[9px] uppercase tracking-[1.4px] text-[#f07a4f]">
+                  <div className="col-span-full mb-2 rounded-xl border border-[#72e0f5]/15 bg-[#102a43] px-4 py-3.5">
+                    <p className="mb-1 font-mono text-[9px] uppercase tracking-[1.4px] text-[#72e0f5]">
                       Built for booked calls
                     </p>
-                    <p className="max-w-[340px] text-[12px] leading-[1.55] text-[#aab3ab]">
+                    <p className="max-w-[340px] text-[12px] leading-[1.55] text-[#a8bfca]">
                       The growth systems behind a stronger HVAC service area.
                     </p>
                   </div>
@@ -148,7 +148,7 @@ export function SiteHeader({
                   >
                     <span>{item}</span>
                     {item === "View all states" && (
-                      <span className="text-[#f07a4f] transition-transform group-hover/item:translate-x-1">
+                      <span className="text-[#ef806d] transition-transform group-hover/item:translate-x-1">
                         ↗
                       </span>
                     )}

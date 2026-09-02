@@ -23,18 +23,18 @@ export function Hero({
       id="top"
     >
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1631545806609-4b7b2efc2f29?auto=format&fit=crop&w=2000&q=85')] bg-cover bg-center saturate-[.55] max-[700px]:bg-[position:63%_center]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,24,23,.96)_5%,rgba(16,24,23,.67)_52%,rgba(16,24,23,.2))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,28,45,.96)_5%,rgba(8,28,45,.67)_52%,rgba(8,28,45,.2))]" />
       <div className="relative max-w-[730px]">
         <p className={`${mono} text-[#72e0f5]`}>
           <span className="mr-3 inline-block h-px w-[30px] bg-[#72e0f5] align-middle" />{" "}
           HVAC growth partner / Est. 2014
         </p>
-        <h1 className="my-[30px] text-[clamp(48px,7vw,92px)] font-medium leading-[.98] tracking-[-2px] text-[#f1f0e9]">
+        <h1 className="my-[30px] text-[clamp(48px,7vw,92px)] font-medium leading-[.98] tracking-[-2px] text-[#f5fbff]">
           More calls.
           <br />
           <em className="not-italic text-[#8be9f5]">Less chasing.</em>
         </h1>
-        <p className="max-w-[390px] text-sm leading-[1.7] text-[#c3cbc5]">
+        <p className="max-w-[390px] text-sm leading-[1.7] text-[#c5d7de]">
           The digital agency for HVAC companies ready to become the obvious
           choice in every market they serve.
         </p>
@@ -53,7 +53,7 @@ export function Hero({
           </button>
         </div>
       </div>
-      <div className="absolute bottom-[100px] right-[7vw] flex items-center gap-3 font-mono text-[10px] uppercase tracking-[1px] text-[#f1f0e9] max-[700px]:bottom-[92px] max-[700px]:right-[8vw]">
+      <div className="absolute bottom-[100px] right-[7vw] flex items-center gap-3 font-mono text-[10px] uppercase tracking-[1px] text-[#f5fbff] max-[700px]:bottom-[92px] max-[700px]:right-[8vw]">
         <span className="text-[30px] text-[#72e0f5]">+42%</span>
         <span>
           Average
@@ -61,8 +61,8 @@ export function Hero({
           qualified leads
         </span>
       </div>
-      <div className="absolute bottom-7 left-[5vw] font-mono text-[10px] uppercase tracking-[1px] text-[#aab3ab]">
-        Scroll to explore <span className="ml-5 text-[#f1f0e9]">↓</span>
+      <div className="absolute bottom-7 left-[5vw] font-mono text-[10px] uppercase tracking-[1px] text-[#a8bfca]">
+        Scroll to explore <span className="ml-5 text-[#f5fbff]">↓</span>
       </div>
     </section>
   );
@@ -71,7 +71,7 @@ export function Hero({
 export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
   return (
     <section
-      className="grid grid-cols-[1fr_2.3fr] gap-[70px] bg-[#f1f0e9] px-[12vw] py-[130px] text-[#101817] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="grid grid-cols-[1fr_2.3fr] gap-[70px] bg-[#f5fbff] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="about"
     >
       <p className={`${mono} text-[#ef806d] max-[700px]:mb-[45px]`}>
@@ -83,7 +83,7 @@ export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
           <br />
           <span className="text-[#176b87]">the service call.</span>
         </h2>
-        <p className="mb-9 max-w-[545px] text-sm leading-[1.8] text-[#59635d]">
+        <p className="mb-9 max-w-[545px] text-sm leading-[1.8] text-[#4d6877]">
           Most agencies speak fluent marketing. We speak fluent HVAC. That means
           no vanity metrics, vague reports, or one-size-fits-all funnels. Just a
           focused system that puts your best services in front of ready-to-book
@@ -127,7 +127,7 @@ export function Expertise({
             <span className="text-[#8be9f5]">More booked jobs.</span>
           </h2>
         </div>
-        <p className="max-w-[280px] text-[13px] leading-[1.7] text-[#aab3ab] max-[700px]:mt-5">
+        <p className="max-w-[280px] text-[13px] leading-[1.7] text-[#a8bfca] max-[700px]:mt-5">
           A practical growth system that connects your website, local presence,
           and reputation.
         </p>
@@ -181,7 +181,7 @@ export function Expertise({
 export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
   return (
     <section
-      className="grid grid-cols-[1fr_1.15fr] bg-[#f1f0e9] pl-[12vw] text-[#101817] max-[700px]:block max-[700px]:px-[8vw]"
+      className="grid grid-cols-[1fr_1.15fr] bg-[#f5fbff] pl-[12vw] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw]"
       id="industries"
     >
       <div className="pt-[165px] max-[700px]:pb-[85px] max-[700px]:pt-[85px]">
@@ -191,7 +191,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
           <br />
           <span className="text-[#176b87]">busy seasons.</span>
         </h2>
-        <p className="mb-[38px] max-w-[280px] text-[13px] leading-[1.7] text-[#59635d]">
+        <p className="mb-[38px] max-w-[280px] text-[13px] leading-[1.7] text-[#4d6877]">
           Whether you run a two-truck operation or a multi-location team, your
           next customer is already searching.
         </p>
@@ -203,7 +203,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
         </button>
       </div>
       <div className="relative min-h-[500px] bg-[url('https://images.unsplash.com/photo-1585128792020-803d29415281?auto=format&fit=crop&w=1200&q=85')] bg-cover bg-center max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px]">
-        <div className="absolute bottom-[30px] left-[30px] right-[30px] flex justify-between border-t border-white/50 pt-3 font-mono text-[10px] uppercase text-[#f1f0e9]">
+        <div className="absolute bottom-[30px] left-[30px] right-[30px] flex justify-between border-t border-white/50 pt-3 font-mono text-[10px] uppercase text-[#f5fbff]">
           <span>Residential & commercial HVAC</span>
           <span>Service area / USA</span>
         </div>
@@ -257,7 +257,7 @@ export function AuditModal({ onClose }: { onClose: () => void }) {
           <br />
           <em className="not-italic text-[#176b87]">next 100 calls.</em>
         </h2>
-        <p className="text-[13px] leading-[1.6] text-[#59635d]">
+        <p className="text-[13px] leading-[1.6] text-[#4d6877]">
           Share a few details and we'll send back the clearest opportunities we
           see in your market.
         </p>
