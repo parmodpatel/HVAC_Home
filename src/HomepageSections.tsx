@@ -218,19 +218,22 @@ export function Resources() {
       category: "Local SEO",
       title: "The HVAC service-area page playbook",
       time: "7 min read",
-      image: "/assets/RgULuwNx4I2-yrVlF8qZxdOymsiyYMwmdIi1GluhLCZUFo3afGyFev8EOY4M_FyffRuKT0ul6stF0IaD_f6lV_dGTAaCfZfIZOqwwZLdKS9W_m0Qh9C46DJ5qGBzsT2cip84JS_Ey-p1jUtqY6X-h1Wz4Y8RtkPgyvDebh0xoD_TIMOtW5ffRMKEpVT05zyA.jpeg",
+      image:
+        "/assets/RgULuwNx4I2-yrVlF8qZxdOymsiyYMwmdIi1GluhLCZUFo3afGyFev8EOY4M_FyffRuKT0ul6stF0IaD_f6lV_dGTAaCfZfIZOqwwZLdKS9W_m0Qh9C46DJ5qGBzsT2cip84JS_Ey-p1jUtqY6X-h1Wz4Y8RtkPgyvDebh0xoD_TIMOtW5ffRMKEpVT05zyA.jpeg",
     },
     {
       category: "Growth",
       title: "Which HVAC leads are actually profitable?",
       time: "5 min read",
-      image: "/assets/Bq6i_uHI_Pa-6VmZm2EeQC-jYkXGBxPffKrjGA7rEILVDxYh7crMIhO5Iqn-4Q-S7FBWumeFQGmz0cPCtNA3OtPtt2yMmKjSZiC5t_6eqf7cpgKesGm5Rd8OawRbskRJcVgXGvoclAJFDb3SrS4VdF_UKbGi9UmR6ahrqocUF8A.jpeg",
+      image:
+        "/assets/Bq6i_uHI_Pa-6VmZm2EeQC-jYkXGBxPffKrjGA7rEILVDxYh7crMIhO5Iqn-4Q-S7FBWumeFQGmz0cPCtNA3OtPtt2yMmKjSZiC5t_6eqf7cpgKesGm5Rd8OawRbskRJcVgXGvoclAJFDb3SrS4VdF_UKbGi9UmR6ahrqocUF8A.jpeg",
     },
     {
       category: "Reputation",
       title: "How to turn every install into a five-star review",
       time: "6 min read",
-      image: "/assets/ZYw0SDnHnYiJnkctjm_SMvB2nkoqEMqp1vOzRiuQ8xDR0Ur6CHPfLMiU_syL1QSxfk5TiMMeKfn5IfhjVpIYCGEVh4emlD-qNXfBixabenx8cBKck-rSsQqkG98nPmYI1BORb7lf41LnxU6g1MDXpA64F-4xdn-SbD-GPBOO_Mvf5m5IQYoLxZqKMg-Pw0pO.jpeg",
+      image:
+        "/assets/ZYw0SDnHnYiJnkctjm_SMvB2nkoqEMqp1vOzRiuQ8xDR0Ur6CHPfLMiU_syL1QSxfk5TiMMeKfn5IfhjVpIYCGEVh4emlD-qNXfBixabenx8cBKck-rSsQqkG98nPmYI1BORb7lf41LnxU6g1MDXpA64F-4xdn-SbD-GPBOO_Mvf5m5IQYoLxZqKMg-Pw0pO.jpeg",
     },
   ];
   return (
@@ -270,8 +273,7 @@ export function Resources() {
             </h3>
             <p className="font-mono text-[10px] uppercase text-[#59635d]">
               {post.time}{" "}
-              <span className="float-right text-[#f07a4f] transition-transform group-hover:translate-x-1">
-              </span>
+              <span className="float-right text-[#f07a4f] transition-transform group-hover:translate-x-1"></span>
             </p>
           </article>
         ))}

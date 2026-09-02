@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  AuditModal,
-  Expertise,
-  Hero,
-  Industries,
-  Intro,
-} from "./components";
+import { AuditModal, Expertise, Hero, Industries, Intro } from "./components";
 import { SiteFooter } from "./Footer";
 import { SiteHeader } from "./Header";
 import {
