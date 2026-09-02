@@ -24,18 +24,24 @@ const services = [
     number: "01",
     title: "HVAC SEO strategy",
     text: "A search strategy built around the services, markets, and high-intent calls that grow your business.",
+    image:
+      "https://images.unsplash.com/photo-1631545806609-4b7b2efc2f29?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: "local",
     number: "02",
     title: "Local SEO & Maps",
     text: "Own the map pack in every service area with optimized locations, profiles, and local authority.",
+    image:
+      "https://images.unsplash.com/photo-1585128792020-803d29415281?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: "content",
     number: "03",
     title: "Content that converts",
     text: "Clear, useful pages that answer real homeowner questions and turn more qualified visits into calls.",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=85",
   },
 ];
 
