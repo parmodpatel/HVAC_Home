@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const mono = "font-mono text-[10px] uppercase tracking-[1.6px]";
 const buttonBase =
-  "border-0 px-5 py-4 text-[11px] tracking-[.5px] transition-all duration-200 hover:-translate-y-0.5";
+  "rounded-full border border-[#72e0f5]/40 px-5 py-4 text-[11px] tracking-[.5px] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#ef806d] hover:shadow-[0_10px_24px_rgba(239,128,109,.18)]";
 
 export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
   const [annual, setAnnual] = useState(false);
@@ -40,27 +40,27 @@ export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
   ];
   return (
     <section
-      className="bg-[#f1f0e9] px-[12vw] py-[120px] text-[#101817] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="bg-[#e8f7fa] px-[12vw] py-[120px] text-[#102a43] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="pricing"
     >
       <div className="flex items-end justify-between max-[700px]:block">
         <div>
-          <p className={`${mono} text-[#f07a4f]`}>04 / Transparent growth</p>
+          <p className={`${mono} text-[#ef806d]`}>Transparent growth</p>
           <h2 className="mb-4 mt-0 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
             Clear scope.
             <br />
-            <span className="text-[#50664f]">No mystery math.</span>
+            <span className="text-[#176b87]">No mystery math.</span>
           </h2>
         </div>
-        <div className="flex border border-[#adb5ad] p-1 text-[11px]">
+        <div className="flex rounded-full border border-[#9fc2ce] p-1 text-[11px]">
           <button
-            className={`border-0 px-4 py-2 ${!annual ? "bg-[#101817] text-[#f1f0e9]" : "bg-transparent"}`}
+            className={`rounded-full border-0 px-4 py-2 ${!annual ? "bg-[#102a43] text-[#f5fbff]" : "bg-transparent"}`}
             onClick={() => setAnnual(false)}
           >
             Monthly
           </button>
           <button
-            className={`border-0 px-4 py-2 ${annual ? "bg-[#101817] text-[#f1f0e9]" : "bg-transparent"}`}
+            className={`rounded-full border-0 px-4 py-2 ${annual ? "bg-[#102a43] text-[#f5fbff]" : "bg-transparent"}`}
             onClick={() => setAnnual(true)}
           >
             Annual <span className="text-[#f07a4f]">-15%</span>
@@ -70,11 +70,11 @@ export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
       <div className="mt-14 grid grid-cols-3 gap-4 max-[900px]:grid-cols-1">
         {plans.map((plan, index) => (
           <article
-            className={`group flex flex-col border p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${index === 1 ? "border-[#f07a4f] bg-[#19201d] text-[#f1f0e9]" : "border-[#c7cec8]"}`}
+            className={`group flex flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${index === 1 ? "border-[#ef806d] bg-[#102a43] text-[#f5fbff]" : "border-[#b8d4dc] bg-[#f5fbff]"}`}
             key={plan.name}
           >
             <p
-              className={`${mono} ${index === 1 ? "text-[#f07a4f]" : "text-[#50664f]"}`}
+              className={`${mono} ${index === 1 ? "text-[#72e0f5]" : "text-[#176b87]"}`}
             >
               {plan.name}
             </p>
@@ -97,10 +97,10 @@ export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
               ))}
             </ul>
             <button
-              className={`${buttonBase} mt-auto self-start ${index === 1 ? "bg-[#f07a4f]" : "border border-[#101817] bg-transparent hover:bg-[#101817] hover:text-[#f1f0e9]"}`}
+              className={`${buttonBase} mt-auto self-start ${index === 1 ? "bg-[#ef806d] text-[#102a43]" : "border border-[#102a43] bg-transparent hover:bg-[#102a43] hover:text-[#f5fbff]"}`}
               onClick={onOpenAudit}
             >
-              Talk about {plan.name} <span className="ml-3">↗</span>
+              Talk about {plan.name}
             </button>
           </article>
         ))}
@@ -111,23 +111,23 @@ export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
 
 export function Proof() {
   return (
-    <section className="bg-[#d5e38f] px-[12vw] py-16 text-[#101817] max-[700px]:px-[8vw]">
+    <section className="bg-[#72e0f5] px-[12vw] py-16 text-[#102a43] max-[700px]:px-[8vw]">
       <div className="grid grid-cols-4 gap-8 max-[700px]:grid-cols-2">
         <div>
           <strong className="block text-4xl font-medium">2.8x</strong>
-          <span className={`${mono} text-[#50664f]`}>More qualified calls</span>
+          <span className={`${mono} text-[#176b87]`}>More qualified calls</span>
         </div>
         <div>
           <strong className="block text-4xl font-medium">+42%</strong>
-          <span className={`${mono} text-[#50664f]`}>Average lead lift</span>
+          <span className={`${mono} text-[#176b87]`}>Average lead lift</span>
         </div>
         <div>
           <strong className="block text-4xl font-medium">68</strong>
-          <span className={`${mono} text-[#50664f]`}>HVAC markets served</span>
+          <span className={`${mono} text-[#176b87]`}>HVAC markets served</span>
         </div>
         <div>
           <strong className="block text-4xl font-medium">11 yrs</strong>
-          <span className={`${mono} text-[#50664f]`}>Industry experience</span>
+          <span className={`${mono} text-[#176b87]`}>Industry experience</span>
         </div>
       </div>
     </section>
@@ -159,21 +159,21 @@ export function Testimonials() {
   const review = reviews[active];
   return (
     <section
-      className="bg-[#19201d] px-[12vw] py-[120px] text-[#f1f0e9] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="bg-[#102a43] px-[12vw] py-[120px] text-[#f5fbff] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="testimonials"
     >
       <div className="flex items-end justify-between">
         <div>
-          <p className={`${mono} text-[#f07a4f]`}>05 / In their words</p>
+          <p className={`${mono} text-[#72e0f5]`}>In their words</p>
           <h2 className="mb-0 mt-0 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
             Proof beats
             <br />
-            <span className="text-[#d5e38f]">promises.</span>
+            <span className="text-[#8be9f5]">promises.</span>
           </h2>
         </div>
         <div className="flex gap-2">
           <button
-            className="h-10 w-10 border border-white/20 bg-transparent text-[#f1f0e9] transition-colors hover:border-[#f07a4f] hover:text-[#f07a4f]"
+            className="h-10 w-10 rounded-full border border-white/20 bg-transparent text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
             onClick={() =>
               setActive((active + reviews.length - 1) % reviews.length)
             }
@@ -182,7 +182,7 @@ export function Testimonials() {
             ←
           </button>
           <button
-            className="h-10 w-10 border border-white/20 bg-transparent text-[#f1f0e9] transition-colors hover:border-[#f07a4f] hover:text-[#f07a4f]"
+            className="h-10 w-10 rounded-full border border-white/20 bg-transparent text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
             onClick={() => setActive((active + 1) % reviews.length)}
             aria-label="Next testimonial"
           >
@@ -194,13 +194,13 @@ export function Testimonials() {
         <p className="text-3xl font-medium leading-tight max-[700px]:text-2xl">
           “{review.quote}”
         </p>
-        <p className={`${mono} mt-10 text-[#f07a4f]`}>
-          {review.name} / <span className="text-[#aab3ab]">{review.role}</span>
+        <p className={`${mono} mt-10 text-[#72e0f5]`}>
+          {review.name} / <span className="text-[#a8bfca]">{review.role}</span>
         </p>
         <div className="mt-8 flex gap-2">
           {reviews.map((item, index) => (
             <button
-              className={`h-1 transition-all ${index === active ? "w-12 bg-[#f07a4f]" : "w-5 bg-white/20"}`}
+              className={`h-1 rounded-full transition-all ${index === active ? "w-12 bg-[#ef806d]" : "w-5 bg-white/20"}`}
               key={item.name}
               onClick={() => setActive(index)}
               aria-label={`Show testimonial ${index + 1}`}
@@ -218,26 +218,29 @@ export function Resources() {
       category: "Local SEO",
       title: "The HVAC service-area page playbook",
       time: "7 min read",
+      image: "/assets/RgULuwNx4I2-yrVlF8qZxdOymsiyYMwmdIi1GluhLCZUFo3afGyFev8EOY4M_FyffRuKT0ul6stF0IaD_f6lV_dGTAaCfZfIZOqwwZLdKS9W_m0Qh9C46DJ5qGBzsT2cip84JS_Ey-p1jUtqY6X-h1Wz4Y8RtkPgyvDebh0xoD_TIMOtW5ffRMKEpVT05zyA.jpeg",
     },
     {
       category: "Growth",
       title: "Which HVAC leads are actually profitable?",
       time: "5 min read",
+      image: "/assets/Bq6i_uHI_Pa-6VmZm2EeQC-jYkXGBxPffKrjGA7rEILVDxYh7crMIhO5Iqn-4Q-S7FBWumeFQGmz0cPCtNA3OtPtt2yMmKjSZiC5t_6eqf7cpgKesGm5Rd8OawRbskRJcVgXGvoclAJFDb3SrS4VdF_UKbGi9UmR6ahrqocUF8A.jpeg",
     },
     {
       category: "Reputation",
       title: "How to turn every install into a five-star review",
       time: "6 min read",
+      image: "/assets/ZYw0SDnHnYiJnkctjm_SMvB2nkoqEMqp1vOzRiuQ8xDR0Ur6CHPfLMiU_syL1QSxfk5TiMMeKfn5IfhjVpIYCGEVh4emlD-qNXfBixabenx8cBKck-rSsQqkG98nPmYI1BORb7lf41LnxU6g1MDXpA64F-4xdn-SbD-GPBOO_Mvf5m5IQYoLxZqKMg-Pw0pO.jpeg",
     },
   ];
   return (
     <section
-      className="bg-[#f1f0e9] px-[12vw] py-[120px] text-[#101817] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="bg-[#f5fbff] px-[12vw] py-[120px] text-[#102a43] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="resources"
     >
       <div className="flex items-end justify-between">
         <div>
-          <p className={`${mono} text-[#f07a4f]`}>06 / The field notes</p>
+          <p className={`${mono} text-[#ef806d]`}>The field notes</p>
           <h2 className="mb-0 mt-0 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
             Useful ideas.
             <br />
@@ -245,7 +248,7 @@ export function Resources() {
           </h2>
         </div>
         <button className="hidden border-0 border-b border-[#adb5ad] bg-transparent pb-2 text-[11px] md:block">
-          View all resources <span className="ml-3">↗</span>
+          View all resources
         </button>
       </div>
       <div className="mt-14 grid grid-cols-3 gap-4 max-[800px]:grid-cols-1">
@@ -254,6 +257,13 @@ export function Resources() {
             className="group border-t border-[#adb5ad] pt-5 transition-colors hover:border-[#f07a4f]"
             key={post.title}
           >
+            <div className="mb-5 aspect-[16/9] overflow-hidden rounded-xl bg-[#cfe8ee]">
+              <img
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src={post.image}
+                alt=""
+              />
+            </div>
             <p className={`${mono} text-[#f07a4f]`}>{post.category}</p>
             <h3 className="my-5 text-2xl font-medium leading-tight transition-colors group-hover:text-[#f07a4f]">
               {post.title}
@@ -261,7 +271,6 @@ export function Resources() {
             <p className="font-mono text-[10px] uppercase text-[#59635d]">
               {post.time}{" "}
               <span className="float-right text-[#f07a4f] transition-transform group-hover:translate-x-1">
-                ↗
               </span>
             </p>
           </article>
@@ -287,12 +296,12 @@ export function FAQ() {
   ];
   return (
     <section
-      className="bg-[#e5e8df] px-[12vw] py-[120px] text-[#101817] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="bg-[#e8f7fa] px-[12vw] py-[120px] text-[#102a43] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="faq"
     >
       <div className="grid grid-cols-[1fr_1.5fr] gap-20 max-[800px]:block">
         <div>
-          <p className={`${mono} text-[#f07a4f]`}>07 / Good to know</p>
+          <p className={`${mono} text-[#ef806d]`}>Good to know</p>
           <h2 className="mb-0 mt-5 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
             Questions,
             <br />
@@ -303,12 +312,12 @@ export function FAQ() {
           {questions.map((question, index) => (
             <div className="border-t border-[#adb5ad]" key={question}>
               <button
-                className="flex w-full items-center justify-between border-0 bg-transparent py-5 text-left text-base font-medium"
+                className="flex w-full items-center justify-between rounded-xl border-0 bg-transparent py-5 text-left text-base font-medium transition-colors hover:bg-[#d7f0f5]"
                 onClick={() => setOpen(open === index ? null : index)}
               >
                 {question}
                 <span
-                  className={`text-2xl font-light text-[#f07a4f] transition-transform ${open === index ? "rotate-45" : ""}`}
+                  className={`text-2xl font-light text-[#ef806d] transition-transform ${open === index ? "rotate-45" : ""}`}
                 >
                   +
                 </span>
@@ -331,15 +340,15 @@ export function FAQ() {
 export function Contact({ onOpenAudit }: { onOpenAudit: () => void }) {
   return (
     <section
-      className="grid grid-cols-[1fr_1fr] gap-20 bg-[#101817] px-[12vw] py-[120px] text-[#f1f0e9] max-[800px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="grid grid-cols-[1fr_1fr] gap-20 bg-[#081c2d] px-[12vw] py-[120px] text-[#f5fbff] max-[800px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="contact"
     >
       <div>
-        <p className={`${mono} text-[#f07a4f]`}>08 / Contact</p>
+        <p className={`${mono} text-[#ef806d]`}>Contact</p>
         <h2 className="mb-6 mt-5 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
           Let's make
           <br />
-          <em className="not-italic text-[#d5e38f]">growth practical.</em>
+          <em className="not-italic text-[#8be9f5]">growth practical.</em>
         </h2>
         <p className="max-w-sm text-sm leading-[1.7] text-[#aab3ab]">
           Tell us where you are now. We'll show you the clearest next move.
@@ -368,32 +377,32 @@ export function Contact({ onOpenAudit }: { onOpenAudit: () => void }) {
         }}
       >
         <input
-          className="border border-white/20 bg-transparent p-4 text-sm text-[#f1f0e9] outline-[#f07a4f] placeholder:text-[#aab3ab]"
+          className="rounded-xl border border-white/20 bg-white/5 p-4 text-sm text-[#f5fbff] outline-[#ef806d] placeholder:text-[#a8bfca]"
           required
           placeholder="Your name"
         />
         <input
-          className="border border-white/20 bg-transparent p-4 text-sm text-[#f1f0e9] outline-[#f07a4f] placeholder:text-[#aab3ab]"
+          className="rounded-xl border border-white/20 bg-white/5 p-4 text-sm text-[#f5fbff] outline-[#ef806d] placeholder:text-[#a8bfca]"
           required
           type="email"
           placeholder="Work email"
         />
         <input
-          className="border border-white/20 bg-transparent p-4 text-sm text-[#f1f0e9] outline-[#f07a4f] placeholder:text-[#aab3ab]"
+          className="rounded-xl border border-white/20 bg-white/5 p-4 text-sm text-[#f5fbff] outline-[#ef806d] placeholder:text-[#a8bfca]"
           required
           placeholder="Company website"
         />
         <textarea
-          className="resize-y border border-white/20 bg-transparent p-4 text-sm text-[#f1f0e9] outline-[#f07a4f] placeholder:text-[#aab3ab]"
+          className="resize-y rounded-xl border border-white/20 bg-white/5 p-4 text-sm text-[#f5fbff] outline-[#ef806d] placeholder:text-[#a8bfca]"
           required
           placeholder="What would you like to grow?"
           rows={4}
         />
         <button
-          className={`${buttonBase} mt-2 justify-self-start bg-[#f07a4f] text-[#101817]`}
+          className={`${buttonBase} mt-2 justify-self-start bg-[#ef806d] text-[#102a43]`}
           type="submit"
         >
-          Start the conversation <span className="ml-3">↗</span>
+          Start the conversation
         </button>
       </form>
     </section>

@@ -13,10 +13,10 @@ function Brand({ onClick }: { onClick: () => void }) {
       onClick={onClick}
       aria-label="Airside Digital home"
     >
-      <span className="grid h-[34px] w-[34px] place-items-center bg-[#f07a4f] text-[21px] italic text-[#101817] transition-transform duration-200 group-hover:rotate-[-8deg]">
+      <span className="grid h-[34px] w-[34px] place-items-center rounded-xl bg-[#72e0f5] text-[21px] italic text-[#102a43] transition-transform duration-200 group-hover:rotate-[-8deg]">
         A
       </span>
-      <span className="transition-colors group-hover:text-[#f07a4f]">
+      <span className="transition-colors group-hover:text-[#72e0f5]">
         AIRSIDE{" "}
         <b className="mt-0.5 block text-[8px] tracking-[2.8px] text-[#aab3ab]">
           DIGITAL
@@ -48,7 +48,7 @@ export function SiteFooter({
               className="flex flex-col items-start gap-[11px]"
               key={column.title}
             >
-              <h3 className="mb-2.5 text-[10px] tracking-[1px] text-[#f07a4f]">
+              <h3 className="mb-2.5 text-[10px] tracking-[1px] text-[#72e0f5]">
                 {column.title}
               </h3>
               {column.items.map((item) => (
@@ -62,9 +62,6 @@ export function SiteFooter({
                   }
                 >
                   {item}
-                  <span className="ml-1 inline-block text-[#f07a4f] opacity-0 transition-opacity group-hover/link:opacity-100">
-                    ↗
-                  </span>
                 </button>
               ))}
             </div>

@@ -147,11 +147,6 @@ export function SiteHeader({
                     }
                   >
                     <span>{item}</span>
-                    {item === "View all states" && (
-                      <span className="text-[#ef806d] transition-transform group-hover/item:translate-x-1">
-                        ↗
-                      </span>
-                    )}
                   </button>
                 ))}
               </div>

@@ -1,3 +1,5 @@
+import heroAsset from "./assets/hero.png";
+
 type Service = {
   id: string;
   number: string;
@@ -8,7 +10,7 @@ type Service = {
 
 const mono = "font-mono text-[10px] uppercase tracking-[1.6px]";
 const buttonBase =
-  "border-0 px-5 py-4 text-[11px] tracking-[.5px] transition-transform hover:-translate-y-0.5";
+  "rounded-full border border-[#72e0f5]/40 px-5 py-4 text-[11px] tracking-[.5px] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#ef806d] hover:shadow-[0_10px_24px_rgba(239,128,109,.18)]";
 
 export function Hero({
   onScrollTo,
@@ -19,11 +21,16 @@ export function Hero({
 }) {
   return (
     <section
-      className="relative flex min-h-[720px] items-center overflow-hidden px-[12vw] pb-[90px] pt-[150px] max-[700px]:min-h-[700px] max-[700px]:px-[8vw] max-[700px]:pb-[100px] max-[700px]:pt-[130px]"
+      className="relative flex min-h-[100svh] items-center overflow-hidden px-[12vw] pb-[90px] pt-[150px] max-[700px]:min-h-[100svh] max-[700px]:px-[8vw] max-[700px]:pb-[100px] max-[700px]:pt-[130px]"
       id="top"
     >
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1631545806609-4b7b2efc2f29?auto=format&fit=crop&w=2000&q=85')] bg-cover bg-center saturate-[.55] max-[700px]:bg-[position:63%_center]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,28,45,.96)_5%,rgba(8,28,45,.67)_52%,rgba(8,28,45,.2))]" />
+      <div className="absolute inset-0 bg-[url('/assets/R7mgq17imfLe62s5970sqC7jp4GaliwnV1zy2dBKkPGjR9_BdTUM9Co7Sg6vsHHtjC7Lv6be8gPsCj8atv_Cz7kIYMW_Udj0M6xocWfin_KHvK3n10988w-ADHA2929_Ul6ELOfK29qZupnafMQgAtNgdYlmd2wxnURIBtZJJ7c.jpeg')] bg-cover bg-center saturate-[.65] max-[700px]:bg-[position:63%_center]" />
+      <div className="absolute inset-0 bg-black/40" />
+      <img
+        className="pointer-events-none absolute right-[8vw] top-1/2 w-[min(28vw,330px)] -translate-y-1/2 opacity-35 mix-blend-screen max-[700px]:right-[-22vw] max-[700px]:top-[42%] max-[700px]:w-[75vw] max-[700px]:opacity-20"
+        src={heroAsset}
+        alt=""
+      />
       <div className="relative max-w-[730px]">
         <p className={`${mono} text-[#72e0f5]`}>
           <span className="mr-3 inline-block h-px w-[30px] bg-[#72e0f5] align-middle" />{" "}
@@ -49,7 +56,7 @@ export function Hero({
             className="border-0 border-b border-white/20 bg-transparent pb-2 text-left text-[11px] tracking-[.7px] text-[#f5fbff] hover:text-[#72e0f5]"
             onClick={onOpenAudit}
           >
-            Get your free audit <span className="ml-3 text-base">↗</span>
+            Get your free audit
           </button>
         </div>
       </div>
@@ -61,9 +68,9 @@ export function Hero({
           qualified leads
         </span>
       </div>
-      <div className="absolute bottom-7 left-[5vw] font-mono text-[10px] uppercase tracking-[1px] text-[#a8bfca]">
+      {/* <div className="absolute bottom-7 left-[5vw] font-mono text-[10px] uppercase tracking-[1px] text-[#a8bfca]">
         Scroll to explore <span className="ml-5 text-[#f5fbff]">↓</span>
-      </div>
+      </div> */}
     </section>
   );
 }
@@ -71,11 +78,11 @@ export function Hero({
 export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
   return (
     <section
-      className="grid grid-cols-[1fr_2.3fr] gap-[70px] bg-[#f5fbff] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="grid grid-cols-[1fr_2.3fr] gap-[70px] border-t border-[#72e0f5]/30 bg-[#e8f7fa] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="about"
     >
       <p className={`${mono} text-[#ef806d] max-[700px]:mb-[45px]`}>
-        01 / The Airside approach
+        The Airside approach
       </p>
       <div>
         <h2 className="mb-8 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
@@ -93,7 +100,7 @@ export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
           className="border-0 border-b border-[#9fc2ce] bg-transparent pb-2 text-left text-[11px] tracking-[.7px] text-[#102a43] hover:text-[#ef806d]"
           onClick={onOpenAudit}
         >
-          Why Airside <span className="ml-3 text-base">↗</span>
+          Why Airside
         </button>
       </div>
     </section>
@@ -120,7 +127,7 @@ export function Expertise({
     >
       <div className="mb-20 flex items-end justify-between max-[700px]:mb-[50px] max-[700px]:block">
         <div>
-          <p className={`${mono} text-[#72e0f5]`}>02 / What we do</p>
+          <p className={`${mono} text-[#72e0f5]`}>What we do</p>
           <h2 className="mb-8 mt-0 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
             One partner.
             <br />
@@ -136,7 +143,7 @@ export function Expertise({
         <div className="border-t border-white/15">
           {services.map((service) => (
             <button
-              className={`grid w-full grid-cols-[50px_1fr_30px] items-center border-0 border-b border-white/15 bg-transparent py-6 text-left ${activeService === service.id ? "border-l-2 border-l-[#ef806d] pl-3 text-[#f5fbff]" : "text-[#a8bfca]"} hover:text-[#f5fbff]`}
+              className={`grid w-full grid-cols-[50px_1fr] items-center rounded-xl border border-transparent border-b-white/15 bg-transparent py-6 text-left transition-all ${activeService === service.id ? "border-l-2 border-l-[#ef806d] bg-white/5 pl-3 text-[#f5fbff]" : "text-[#a8bfca]"} hover:border-[#72e0f5]/20 hover:bg-white/5 hover:text-[#f5fbff]`}
               key={service.id}
               onClick={() => onSelectService(service.id)}
             >
@@ -144,7 +151,6 @@ export function Expertise({
                 {service.number}
               </span>
               <strong className="text-base font-medium">{service.title}</strong>
-              <i className="text-right not-italic opacity-40">↗</i>
             </button>
           ))}
         </div>
@@ -170,7 +176,7 @@ export function Expertise({
             className="border-0 border-b border-white/15 bg-transparent pb-2 text-left text-[11px] tracking-[.7px] text-[#f5fbff] hover:text-[#72e0f5]"
             onClick={onOpenAudit}
           >
-            Explore service <span className="ml-3 text-base">↗</span>
+            Explore service
           </button>
         </div>
       </div>
@@ -181,55 +187,45 @@ export function Expertise({
 export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
   return (
     <section
-      className="grid grid-cols-[1fr_1.15fr] bg-[#f5fbff] pl-[12vw] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw]"
+      className="grid grid-cols-[1fr_1.15fr] border-t border-[#9fc2ce] bg-[#e8f7fa] pl-[12vw] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw]"
       id="industries"
     >
-      <div className="pt-[165px] max-[700px]:pb-[85px] max-[700px]:pt-[85px]">
-        <p className={`${mono} text-[#ef806d]`}>03 / Who we help</p>
+      <div className="flex flex-col items-start justify-center py-[130px] pr-[8vw] max-[700px]:pb-[85px] max-[700px]:pt-[85px]">
+        <p className={`${mono} text-[#ef806d]`}>Who we help</p>
         <h2 className="mb-[22px] mt-0 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
           Built for
           <br />
           <span className="text-[#176b87]">busy seasons.</span>
         </h2>
-        <p className="mb-[38px] max-w-[280px] text-[13px] leading-[1.7] text-[#4d6877]">
+        <p className="mb-7 max-w-[330px] text-[13px] leading-[1.7] text-[#4d6877]">
           Whether you run a two-truck operation or a multi-location team, your
           next customer is already searching.
         </p>
+        <div className="mb-9 flex flex-wrap gap-2 font-mono text-[9px] uppercase tracking-[1px] text-[#176b87]">
+          <span className="rounded-full border border-[#9fc2ce] bg-[#f5fbff]/70 px-3 py-2">
+            Residential HVAC
+          </span>
+          <span className="rounded-full border border-[#9fc2ce] bg-[#f5fbff]/70 px-3 py-2">
+            Commercial HVAC
+          </span>
+        </div>
         <button
-          className={`${buttonBase} bg-[#ef806d] text-[#102a43] shadow-[0_12px_24px_rgba(239,128,109,.22)]`}
+          className={`${buttonBase} inline-flex items-center justify-center bg-[#ef806d] text-[#102a43] shadow-[0_12px_24px_rgba(239,128,109,.22)] hover:bg-[#102a43] hover:text-[#f5fbff] active:translate-y-0 active:scale-[.98] focus:outline-none focus:ring-2 focus:ring-[#72e0f5] focus:ring-offset-2 focus:ring-offset-[#f5fbff]`}
           onClick={onOpenAudit}
         >
-          Find your growth plan <span className="ml-3 text-base">↗</span>
+          Find your growth plan
         </button>
       </div>
-      <div className="relative min-h-[500px] bg-[url('https://images.unsplash.com/photo-1585128792020-803d29415281?auto=format&fit=crop&w=1200&q=85')] bg-cover bg-center max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px]">
+      <div className="relative min-h-[500px] overflow-hidden bg-[url('/assets/RUdJP3HkLHxCNVs0Xr74SMwLIzn0oKNMK8P99Y4TsSB_dq7W5Vo7KDS2IhOm1bKM6u25ZSzThvbAELHQYs90HdSL7HxYwoA7j9Dsn1ah4nwgdFYyDvhgRNic_9yXhKCDygc4gWZmWqAz_XSDBT4PbGDWHEYol3ROBW7umflnLHc.jpeg')] bg-cover bg-center shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px]">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#081c2d]/80 via-transparent to-[#102a43]/10" />
+        <span className="absolute left-7 top-7 rounded-full border border-[#72e0f5]/60 bg-[#081c2d]/75 px-3 py-2 font-mono text-[9px] uppercase tracking-[1px] text-[#72e0f5] backdrop-blur-sm">
+          Built for busy seasons
+        </span>
         <div className="absolute bottom-[30px] left-[30px] right-[30px] flex justify-between border-t border-white/50 pt-3 font-mono text-[10px] uppercase text-[#f5fbff]">
           <span>Residential & commercial HVAC</span>
           <span>Service area / USA</span>
         </div>
       </div>
-    </section>
-  );
-}
-
-export function Closing({ onOpenAudit }: { onOpenAudit: () => void }) {
-  return (
-    <section
-      className="flex min-h-[490px] flex-col items-center justify-center bg-[#081c2d] px-[12vw] py-[130px] text-center text-[#f5fbff] max-[700px]:min-h-[430px] max-[700px]:px-[8vw] max-[700px]:py-[85px]"
-      id="insights"
-    >
-      <p className={`${mono} text-[#72e0f5]`}>04 / Let's talk</p>
-      <h2 className="mb-8 mt-0 text-[clamp(48px,6vw,84px)] font-medium leading-[.98] tracking-[-2px]">
-        Ready to turn
-        <br />
-        <em className="not-italic text-[#8be9f5]">search into service?</em>
-      </h2>
-      <button
-        className={`${buttonBase} bg-[#ef806d] text-[#102a43] shadow-[0_12px_24px_rgba(239,128,109,.22)]`}
-        onClick={onOpenAudit}
-      >
-        Get my free audit <span className="ml-3 text-base">↗</span>
-      </button>
     </section>
   );
 }
@@ -294,7 +290,7 @@ export function AuditModal({ onClose }: { onClose: () => void }) {
             className={`${buttonBase} bg-[#ef806d] text-[#102a43]`}
             type="submit"
           >
-            Request my audit <span className="ml-3 text-base">↗</span>
+            Request my audit
           </button>
         </form>
       </div>

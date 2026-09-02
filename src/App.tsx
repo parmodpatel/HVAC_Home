@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   AuditModal,
-  Closing,
   Expertise,
   Hero,
   Industries,
@@ -25,7 +24,7 @@ const services = [
     title: "HVAC SEO strategy",
     text: "A search strategy built around the services, markets, and high-intent calls that grow your business.",
     image:
-      "https://images.unsplash.com/photo-1631545806609-4b7b2efc2f29?auto=format&fit=crop&w=900&q=85",
+      "/assets/Bq6i_uHI_Pa-6VmZm2EeQC-jYkXGBxPffKrjGA7rEILVDxYh7crMIhO5Iqn-4Q-S7FBWumeFQGmz0cPCtNA3OtPtt2yMmKjSZiC5t_6eqf7cpgKesGm5Rd8OawRbskRJcVgXGvoclAJFDb3SrS4VdF_UKbGi9UmR6ahrqocUF8A.jpeg",
   },
   {
     id: "local",
@@ -33,7 +32,7 @@ const services = [
     title: "Local SEO & Maps",
     text: "Own the map pack in every service area with optimized locations, profiles, and local authority.",
     image:
-      "https://images.unsplash.com/photo-1585128792020-803d29415281?auto=format&fit=crop&w=900&q=85",
+      "/assets/RgULuwNx4I2-yrVlF8qZxdOymsiyYMwmdIi1GluhLCZUFo3afGyFev8EOY4M_FyffRuKT0ul6stF0IaD_f6lV_dGTAaCfZfIZOqwwZLdKS9W_m0Qh9C46DJ5qGBzsT2cip84JS_Ey-p1jUtqY6X-h1Wz4Y8RtkPgyvDebh0xoD_TIMOtW5ffRMKEpVT05zyA.jpeg",
   },
   {
     id: "content",
@@ -41,7 +40,7 @@ const services = [
     title: "Content that converts",
     text: "Clear, useful pages that answer real homeowner questions and turn more qualified visits into calls.",
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=85",
+      "/assets/__feW9MmNrx8PrtAsWksLKu0KC8w1WrTGmVI3_k6rcTC8L3d98lV5qnWu4TRH7liQe9vxoX8_WY0jnKIX9-JMJezpgDdjSpdgWp5pI_FpgBh3DQpbcdNqTHEsHfz88d5Yg1rmQvFuCBFBwa_78IEXECX4mJX4OtxB1cheU69GeyrmSkxW-bpfcnHo9_M0CuP.jpeg",
   },
 ];
 
@@ -172,7 +171,6 @@ function App() {
       <Resources />
       <FAQ />
       <Contact onOpenAudit={openAudit} />
-      <Closing onOpenAudit={openAudit} />
       <SiteFooter
         footerColumns={footerColumns}
         onScrollTo={scrollTo}
