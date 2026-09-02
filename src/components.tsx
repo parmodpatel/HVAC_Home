@@ -32,16 +32,16 @@ export function Hero({
         alt=""
       />
       <div className="relative max-w-[730px]">
-        <p className={`${mono} text-[#72e0f5]`}>
+        <p className={`${mono} text-[#72e0f5] max-[700px]:hidden`}>
           <span className="mr-3 inline-block h-px w-[30px] bg-[#72e0f5] align-middle" />{" "}
           HVAC growth partner / Est. 2014
         </p>
-        <h1 className="my-[30px] text-[clamp(48px,7vw,92px)] font-medium leading-[.98] tracking-[-2px] text-[#f5fbff]">
+        <h1 className="my-[30px] text-[clamp(52px,7vw,96px)] font-medium leading-[.98] tracking-[-2px] text-[#f5fbff] max-[700px]:my-6 max-[700px]:max-w-[370px] max-[700px]:text-[52px] max-[700px]:leading-[1.02]">
           More calls.
           <br />
           <em className="not-italic text-[#8be9f5]">Less chasing.</em>
         </h1>
-        <p className="max-w-[390px] text-sm leading-[1.7] text-[#c5d7de]">
+        <p className="max-w-[420px] text-xl leading-[1.65] text-[#c5d7de] max-[700px]:max-w-[340px] max-[700px]:text-[17px] max-[700px]:leading-[1.55]">
           The digital agency for HVAC companies ready to become the obvious
           choice in every market they serve.
         </p>
@@ -53,14 +53,14 @@ export function Hero({
             See how we grow HVAC <span className="ml-3 text-base">↓</span>
           </button>
           <button
-            className="border-0 border-b border-white/20 bg-transparent pb-2 text-left text-[11px] tracking-[.7px] text-[#f5fbff] hover:text-[#72e0f5]"
+            className="border-0 border-b border-white/20 bg-transparent pb-2 text-left text-[11px] tracking-[.7px] text-[#f5fbff] hover:text-[#72e0f5] max-[700px]:hidden"
             onClick={onOpenAudit}
           >
             Get your free audit
           </button>
         </div>
       </div>
-      <div className="absolute bottom-[100px] right-[7vw] flex items-center gap-3 font-mono text-[10px] uppercase tracking-[1px] text-[#f5fbff] max-[700px]:bottom-[92px] max-[700px]:right-[8vw]">
+      <div className="absolute bottom-[100px] right-[7vw] flex items-center gap-3 font-mono text-[10px] uppercase tracking-[1px] text-[#f5fbff] max-[700px]:hidden">
         <span className="text-[30px] text-[#72e0f5]">+42%</span>
         <span>
           Average
@@ -191,17 +191,17 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
       id="industries"
     >
       <div className="flex flex-col items-start justify-center py-[130px] pr-[8vw] max-[700px]:pb-[85px] max-[700px]:pt-[85px]">
-        <p className={`${mono} text-[#ef806d]`}>Who we help</p>
-        <h2 className="mb-[22px] mt-0 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
+        <p className={`${mono} text-[#ef806d] `}>Who we help</p>
+        <h2 className="mb-[22px] mt-0 max-w-[560px] text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px] max-[700px]:text-[48px] max-[700px]:leading-[1]">
           Built for
           <br />
           <span className="text-[#176b87]">busy seasons.</span>
         </h2>
-        <p className="mb-7 max-w-[330px] text-[13px] leading-[1.7] text-[#4d6877]">
+        <p className="mb-7 max-w-[330px] text-lg leading-[1.7] text-[#4d6877] max-[700px]:text-[15px]">
           Whether you run a two-truck operation or a multi-location team, your
           next customer is already searching.
         </p>
-        <div className="mb-9 flex flex-wrap gap-2 font-mono text-[9px] uppercase tracking-[1px] text-[#176b87]">
+        <div className="mb-9 flex flex-wrap gap-2 font-mono text-lg uppercase tracking-[1px] text-[#176b87]">
           <span className="rounded-full border border-[#9fc2ce] bg-[#f5fbff]/70 px-3 py-2">
             Residential HVAC
           </span>
@@ -210,13 +210,13 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
           </span>
         </div>
         <button
-          className={`${buttonBase} inline-flex items-center justify-center bg-[#ef806d] text-[#102a43] shadow-[0_12px_24px_rgba(239,128,109,.22)] hover:bg-[#102a43] hover:text-[#f5fbff] active:translate-y-0 active:scale-[.98] focus:outline-none focus:ring-2 focus:ring-[#72e0f5] focus:ring-offset-2 focus:ring-offset-[#f5fbff]`}
+          className={`${buttonBase} inline-flex items-center justify-center bg-[#176b87] text-[#f5fbff] shadow-[0_12px_24px_rgba(23,107,135,.25)] hover:border-[#ef806d] hover:bg-[#ef806d] hover:text-[#102a43] active:translate-y-0 active:scale-[.98] focus:outline-none focus:ring-2 focus:ring-[#72e0f5] focus:ring-offset-2 focus:ring-offset-[#e8f7fa]`}
           onClick={onOpenAudit}
         >
           Find your growth plan
         </button>
       </div>
-      <div className="relative min-h-[500px] overflow-hidden bg-[url('/assets/RUdJP3HkLHxCNVs0Xr74SMwLIzn0oKNMK8P99Y4TsSB_dq7W5Vo7KDS2IhOm1bKM6u25ZSzThvbAELHQYs90HdSL7HxYwoA7j9Dsn1ah4nwgdFYyDvhgRNic_9yXhKCDygc4gWZmWqAz_XSDBT4PbGDWHEYol3ROBW7umflnLHc.jpeg')] bg-cover bg-center shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px]">
+      <div className="relative min-h-[500px] overflow-hidden rounded-l-3xl bg-[url('/assets/RUdJP3HkLHxCNVs0Xr74SMwLIzn0oKNMK8P99Y4TsSB_dq7W5Vo7KDS2IhOm1bKM6u25ZSzThvbAELHQYs90HdSL7HxYwoA7j9Dsn1ah4nwgdFYyDvhgRNic_9yXhKCDygc4gWZmWqAz_XSDBT4PbGDWHEYol3ROBW7umflnLHc.jpeg')] bg-cover bg-center shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px] max-[700px]:rounded-3xl">
         <div className="absolute inset-0 bg-gradient-to-t from-[#081c2d]/80 via-transparent to-[#102a43]/10" />
         <span className="absolute left-7 top-7 rounded-full border border-[#72e0f5]/60 bg-[#081c2d]/75 px-3 py-2 font-mono text-[9px] uppercase tracking-[1px] text-[#72e0f5] backdrop-blur-sm">
           Built for busy seasons

@@ -70,7 +70,7 @@ export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
       <div className="mt-14 grid grid-cols-3 gap-4 max-[900px]:grid-cols-1">
         {plans.map((plan, index) => (
           <article
-            className={`group flex flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${index === 1 ? "border-[#ef806d] bg-[#102a43] text-[#f5fbff]" : "border-[#b8d4dc] bg-[#f5fbff]"}`}
+            className={`group flex flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${index === 1 ? "border-[#ef806d] bg-[#102a43] text-[#f5fbff]" : "border-[#b8d4dc] bg-white text-[#102a43]"}`}
             key={plan.name}
           >
             <p
@@ -111,23 +111,31 @@ export function Pricing({ onOpenAudit }: { onOpenAudit: () => void }) {
 
 export function Proof() {
   return (
-    <section className="bg-[#72e0f5] px-[12vw] py-16 text-[#102a43] max-[700px]:px-[8vw]">
-      <div className="grid grid-cols-4 gap-8 max-[700px]:grid-cols-2">
-        <div>
-          <strong className="block text-4xl font-medium">2.8x</strong>
-          <span className={`${mono} text-[#176b87]`}>More qualified calls</span>
+    <section className="border-y border-[#72e0f5]/20 bg-[#102a43] px-[12vw] py-14 text-[#f5fbff] max-[700px]:px-[8vw] max-[700px]:py-10">
+      <div className="grid grid-cols-4 divide-x divide-white/15 max-[700px]:grid-cols-2 max-[700px]:divide-x-0 max-[700px]:gap-y-8">
+        <div className="px-6 first:pl-0 max-[700px]:px-0">
+          <strong className="block text-4xl font-medium text-[#8be9f5]">
+            2.8x
+          </strong>
+          <span className={`${mono} text-[#a8bfca]`}>More qualified calls</span>
         </div>
-        <div>
-          <strong className="block text-4xl font-medium">+42%</strong>
-          <span className={`${mono} text-[#176b87]`}>Average lead lift</span>
+        <div className="px-6 max-[700px]:px-0">
+          <strong className="block text-4xl font-medium text-[#8be9f5]">
+            +42%
+          </strong>
+          <span className={`${mono} text-[#a8bfca]`}>Average lead lift</span>
         </div>
-        <div>
-          <strong className="block text-4xl font-medium">68</strong>
-          <span className={`${mono} text-[#176b87]`}>HVAC markets served</span>
+        <div className="px-6 max-[700px]:px-0">
+          <strong className="block text-4xl font-medium text-[#8be9f5]">
+            68
+          </strong>
+          <span className={`${mono} text-[#a8bfca]`}>HVAC markets served</span>
         </div>
-        <div>
-          <strong className="block text-4xl font-medium">11 yrs</strong>
-          <span className={`${mono} text-[#176b87]`}>Industry experience</span>
+        <div className="px-6 max-[700px]:px-0">
+          <strong className="block text-4xl font-medium text-[#8be9f5]">
+            11 yrs
+          </strong>
+          <span className={`${mono} text-[#a8bfca]`}>Industry experience</span>
         </div>
       </div>
     </section>
