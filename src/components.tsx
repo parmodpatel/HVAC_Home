@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import heroAsset from "./assets/hero.png";
 
 type Service = {
@@ -76,28 +77,55 @@ export function Hero({
 }
 
 export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
+  const slides = [
+    {
+      image:
+        "/assets/upGm44GETjY3a1k_R3Bzk8gyCOpZllm8arrzKAc9nxxbKVbCHqUdmR9OLIXwh_Cl9VuwbKR6uE6kAcvHrHxP3pkQGhimhnm5C0MOlAQqTXXnnY_QQyHXtONBTn2LtOYOh3mOwXizT2q1v5mHj5XFkwfsMTa2ypZZpjBesVYpmdQ.jpeg",
+      alt: "HVAC marketing planning session",
+      label: "Strategy that converts",
+    },
+    {
+      image:
+        "/assets/6zzljXHMLFM720bX1MupGngVHcgFDI90CJDd77qzGZeTq6RFMsxEj2zmLzAIfVxE8HSAPKS6YpUumKRQVz8shv-qzKDhocT_p9DtArOUTrPDY0jhSZJkQ9oj5QuLUp_b74kpOlcA6yFIRaTX0JVh7KD5-lYW8KviNcMnWN6bHGE.jpeg",
+      alt: "Modern residential HVAC system",
+      label: "Comfort, made visible",
+    },
+    {
+      image:
+        "/assets/T4Tbhq229fcOaGIe9g4x7gCXKIhoXbRvMHMWwy3dxXpbUuEscMSSMbJpUC5Wa4dcYp6PQwUsftdC7sVcdmFo3VLX6_quMLSzcr6LvHbf-yJW23Xmj2s15qQhZeosSmJhEs3rZWBmr097kooVjWMr3dU-3pFvbVYnnPMdXKaDgLU.jpeg",
+      alt: "Commercial HVAC technicians at work",
+      label: "Built for the field",
+    },
+  ];
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isSliderPaused, setIsSliderPaused] = useState(false);
+  const showSlide = (index: number) => {
+    setActiveSlide((index + slides.length) % slides.length);
+  };
+
+  useEffect(() => {
+    if (isSliderPaused) return;
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 4200);
+    return () => window.clearInterval(timer);
+  }, [isSliderPaused, slides.length]);
+
   return (
     <section
-      className="grid grid-cols-[1.15fr_2fr] gap-[80px] border-t border-[#72e0f5]/30 bg-[#e8f7fa] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="grid grid-cols-[1fr_1.35fr] items-center gap-[80px] border-t border-[#72e0f5]/30 bg-[#e8f7fa] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="about"
     >
-      <div className="max-[700px]:mb-[45px]">
-        <p className={`${mono} text-[#ef806d]`}>The Airside approach</p>
-        <div className="mt-8 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] shadow-[0_16px_32px_rgba(16,42,67,.12)]">
-          <img
-            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-            src="/assets/T4Tbhq229fcOaGIe9g4x7gCXKIhoXbRvMHMWwy3dxXpbUuEscMSSMbJpUC5Wa4dcYp6PQwUsftdC7sVcdmFo3VLX6_quMLSzcr6LvHbf-yJW23Xmj2s15qQhZeosSmJhEs3rZWBmr097kooVjWMr3dU-3pFvbVYnnPMdXKaDgLU.jpeg"
-            alt="Commercial HVAC technicians at work"
-          />
-        </div>
-      </div>
       <div>
+        <p className="mb-8 text-xl font-medium uppercase tracking-[1.6px] text-[#ef806d]">
+          The Airside approach
+        </p>
         <h2 className="mb-8 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
           Marketing built for
           <br />
           <span className="text-[#176b87]">the service call.</span>
         </h2>
-        <p className="mb-9 max-w-[545px] text-sm leading-[1.8] text-[#4d6877]">
+        <p className="mb-9 max-w-[545px] text-md leading-[1.8] text-[#4d6877]">
           Most agencies speak fluent marketing. We speak fluent HVAC. That means
           no vanity metrics, vague reports, or one-size-fits-all funnels. Just a
           focused system that puts your best services in front of ready-to-book
@@ -109,24 +137,61 @@ export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
         >
           Why Airside
         </button>
-        <div className="mt-10 grid max-w-[680px] grid-cols-[1.35fr_.65fr] gap-3 max-[700px]:grid-cols-1">
-          <div className="relative h-[220px] overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] max-[700px]:h-[190px]">
+      </div>
+      <div className="min-w-0 md:justify-self-end">
+        <div
+          className="relative aspect-[16/10] w-full max-w-[560px] overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] shadow-[0_16px_32px_rgba(16,42,67,.12)]"
+          onMouseEnter={() => setIsSliderPaused(true)}
+          onMouseLeave={() => setIsSliderPaused(false)}
+          onFocus={() => setIsSliderPaused(true)}
+          onBlur={() => setIsSliderPaused(false)}
+        >
+          {slides.map((slide, index) => (
             <img
-              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-              src="/assets/upGm44GETjY3a1k_R3Bzk8gyCOpZllm8arrzKAc9nxxbKVbCHqUdmR9OLIXwh_Cl9VuwbKR6uE6kAcvHrHxP3pkQGhimhnm5C0MOlAQqTXXnnY_QQyHXtONBTn2LtOYOh3mOwXizT2q1v5mHj5XFkwfsMTa2ypZZpjBesVYpmdQ.jpeg"
-              alt="HVAC marketing planning session"
+              className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${index === activeSlide ? "scale-100 opacity-100" : "scale-105 opacity-0"}`}
+              src={slide.image}
+              alt={index === activeSlide ? slide.alt : ""}
+              key={slide.image}
             />
-            <span className="absolute bottom-3 left-3 rounded-full bg-[#102a43]/85 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[1px] text-[#8be9f5]">
-              Strategy that converts
-            </span>
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#081c2d]/75 via-transparent to-transparent" />
+          <span className="absolute bottom-4 left-4 rounded-full bg-[#102a43]/85 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[1px] text-[#8be9f5]">
+            {slides[activeSlide].label}
+          </span>
+          <span className="absolute right-4 top-4 rounded-full border border-white/35 bg-[#102a43]/75 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[1px] text-[#f5fbff]">
+            {String(activeSlide + 1).padStart(2, "0")} /{" "}
+            {String(slides.length).padStart(2, "0")}
+          </span>
+          <div className="absolute bottom-3 right-3 flex items-center gap-2">
+            <button
+              className="grid h-8 w-8 place-items-center rounded-full border border-white/40 bg-[#102a43]/75 text-sm text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
+              onClick={() => showSlide(activeSlide - 1)}
+              aria-label="Previous image"
+            >
+              ←
+            </button>
+            <button
+              className="grid h-8 w-8 place-items-center rounded-full border border-white/40 bg-[#102a43]/75 text-sm text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
+              onClick={() => showSlide(activeSlide + 1)}
+              aria-label="Next image"
+            >
+              →
+            </button>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] max-[700px]:h-[190px]">
-            <img
-              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-              src="/assets/6zzljXHMLFM720bX1MupGngVHcgFDI90CJDd77qzGZeTq6RFMsxEj2zmLzAIfVxE8HSAPKS6YpUumKRQVz8shv-qzKDhocT_p9DtArOUTrPDY0jhSZJkQ9oj5QuLUp_b74kpOlcA6yFIRaTX0JVh7KD5-lYW8KviNcMnWN6bHGE.jpeg"
-              alt="Modern residential HVAC system"
+        </div>
+        <div className="mt-4 flex items-center gap-2">
+          {slides.map((slide, index) => (
+            <button
+              className={`h-1.5 rounded-full transition-all ${index === activeSlide ? "w-9 bg-[#ef806d]" : "w-5 bg-[#9fc2ce] hover:bg-[#176b87]"}`}
+              key={slide.label}
+              onClick={() => showSlide(index)}
+              aria-label={`Show image ${index + 1}: ${slide.label}`}
+              aria-current={index === activeSlide}
             />
-          </div>
+          ))}
+          <span className="ml-2 font-mono text-[9px] uppercase tracking-[1px] text-[#4d6877]">
+            {isSliderPaused ? "Paused" : "Auto"}
+          </span>
         </div>
       </div>
     </section>
@@ -211,6 +276,29 @@ export function Expertise({
 }
 
 export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
+  const slides = [
+    {
+      image:
+        "/assets/RUdJP3HkLHxCNVs0Xr74SMwLIzn0oKNMK8P99Y4TsSB_dq7W5Vo7KDS2IhOm1bKM6u25ZSzThvbAELHQYs90HdSL7HxYwoA7j9Dsn1ah4nwgdFYyDvhgRNic_9yXhKCDygc4gWZmWqAz_XSDBT4PbGDWHEYol3ROBW7umflnLHc.jpeg",
+      alt: "Residential and commercial HVAC system",
+    },
+    {
+      image:
+        "/assets/DBNoxsPD0HukszBdMwT38bs-AFVpUhjKymOpmSUI9cghC3E0su8HddlMpGXSsbU31oYZq8neM5K1ewNMTv5kp8TapdMeXPW_PonrZF1SP2R51I8Vhdf962Evb3ParzTuNubQ72oGFRKeq6JWAURv1uK9SM8SKWiU8wQGpuRiaItq9CCfVeBTCh_70zK1YxGu.jpeg",
+      alt: "HVAC equipment and service environment",
+    },
+  ];
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isSliderPaused, setIsSliderPaused] = useState(false);
+
+  useEffect(() => {
+    if (isSliderPaused) return;
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 4600);
+    return () => window.clearInterval(timer);
+  }, [isSliderPaused, slides.length]);
+
   return (
     <section
       className="grid grid-cols-[1fr_1.15fr] border-t border-[#9fc2ce] bg-[#e8f7fa] pl-[12vw] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw]"
@@ -242,7 +330,21 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
           Find your growth plan
         </button>
       </div>
-      <div className="relative min-h-[500px] overflow-hidden rounded-l-3xl bg-[url('/assets/RUdJP3HkLHxCNVs0Xr74SMwLIzn0oKNMK8P99Y4TsSB_dq7W5Vo7KDS2IhOm1bKM6u25ZSzThvbAELHQYs90HdSL7HxYwoA7j9Dsn1ah4nwgdFYyDvhgRNic_9yXhKCDygc4gWZmWqAz_XSDBT4PbGDWHEYol3ROBW7umflnLHc.jpeg')] bg-cover bg-center shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px] max-[700px]:rounded-3xl">
+      <div
+        className="group relative min-h-[420px] overflow-hidden rounded-l-3xl border border-[#102a43]/15 bg-[#102a43] shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[300px] max-[700px]:rounded-3xl"
+        onMouseEnter={() => setIsSliderPaused(true)}
+        onMouseLeave={() => setIsSliderPaused(false)}
+        onFocus={() => setIsSliderPaused(true)}
+        onBlur={() => setIsSliderPaused(false)}
+      >
+        {slides.map((slide, index) => (
+          <img
+            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${index === activeSlide ? "scale-100 opacity-100" : "scale-105 opacity-0"}`}
+            src={slide.image}
+            alt={index === activeSlide ? slide.alt : ""}
+            key={slide.image}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-t from-[#081c2d]/80 via-transparent to-[#102a43]/10" />
         <span className="absolute left-7 top-7 rounded-full border border-[#72e0f5]/60 bg-[#081c2d]/75 px-3 py-2 font-mono text-[9px] uppercase tracking-[1px] text-[#72e0f5] backdrop-blur-sm">
           Built for busy seasons
@@ -250,6 +352,37 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
         <div className="absolute bottom-[30px] left-[30px] right-[30px] flex justify-between border-t border-white/50 pt-3 font-mono text-[10px] uppercase text-[#f5fbff]">
           <span>Residential & commercial HVAC</span>
           <span>Service area / USA</span>
+        </div>
+        <span className="absolute right-5 top-5 rounded-full border border-white/35 bg-[#102a43]/75 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[1px] text-[#f5fbff]">
+          {String(activeSlide + 1).padStart(2, "0")} /{" "}
+          {String(slides.length).padStart(2, "0")}
+        </span>
+        <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
+          <button
+            className="grid h-7 w-7 place-items-center rounded-full border border-white/40 bg-[#102a43]/80 text-xs text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
+            onClick={() =>
+              setActiveSlide((activeSlide + slides.length - 1) % slides.length)
+            }
+            aria-label="Previous industry image"
+          >
+            ←
+          </button>
+          {slides.map((slide, index) => (
+            <button
+              className={`h-1 rounded-full transition-all ${index === activeSlide ? "w-7 bg-[#ef806d]" : "w-4 bg-white/60 hover:bg-[#72e0f5]"}`}
+              key={slide.image}
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Show industry image ${index + 1}`}
+              aria-current={index === activeSlide}
+            />
+          ))}
+          <button
+            className="grid h-7 w-7 place-items-center rounded-full border border-white/40 bg-[#102a43]/80 text-xs text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
+            onClick={() => setActiveSlide((activeSlide + 1) % slides.length)}
+            aria-label="Next industry image"
+          >
+            →
+          </button>
         </div>
       </div>
     </section>
