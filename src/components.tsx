@@ -138,9 +138,9 @@ export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
           Why Airside
         </button>
       </div>
-      <div className="min-w-0 md:justify-self-end">
+      <div className="min-w-0">
         <div
-          className="relative aspect-[16/10] w-full max-w-[560px] overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] shadow-[0_16px_32px_rgba(16,42,67,.12)]"
+          className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] shadow-[0_16px_32px_rgba(16,42,67,.12)]"
           onMouseEnter={() => setIsSliderPaused(true)}
           onMouseLeave={() => setIsSliderPaused(false)}
           onFocus={() => setIsSliderPaused(true)}
@@ -331,7 +331,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
         </button>
       </div>
       <div
-        className="group relative min-h-[420px] overflow-hidden rounded-l-3xl border border-[#102a43]/15 bg-[#102a43] shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[300px] max-[700px]:rounded-3xl"
+        className="group relative min-h-[500px] overflow-hidden rounded-l-3xl border border-[#102a43]/15 bg-[#102a43] shadow-[inset_0_0_0_1px_rgba(16,42,67,.18)] max-[700px]:mx-[-8vw] max-[700px]:min-h-[360px] max-[700px]:rounded-3xl"
         onMouseEnter={() => setIsSliderPaused(true)}
         onMouseLeave={() => setIsSliderPaused(false)}
         onFocus={() => setIsSliderPaused(true)}
@@ -353,13 +353,13 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
           <span>Residential & commercial HVAC</span>
           <span>Service area / USA</span>
         </div>
-        <span className="absolute right-5 top-5 rounded-full border border-white/35 bg-[#102a43]/75 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[1px] text-[#f5fbff]">
+        <span className="absolute right-7 top-7 rounded-full border border-white/35 bg-[#102a43]/75 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[1px] text-[#f5fbff]">
           {String(activeSlide + 1).padStart(2, "0")} /{" "}
           {String(slides.length).padStart(2, "0")}
         </span>
-        <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
+        <div className="absolute bottom-3 right-3 flex items-center gap-2">
           <button
-            className="grid h-7 w-7 place-items-center rounded-full border border-white/40 bg-[#102a43]/80 text-xs text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
+            className="grid h-8 w-8 place-items-center rounded-full border border-white/40 bg-[#102a43]/80 text-sm text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
             onClick={() =>
               setActiveSlide((activeSlide + slides.length - 1) % slides.length)
             }
@@ -369,7 +369,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
           </button>
           {slides.map((slide, index) => (
             <button
-              className={`h-1 rounded-full transition-all ${index === activeSlide ? "w-7 bg-[#ef806d]" : "w-4 bg-white/60 hover:bg-[#72e0f5]"}`}
+              className={`h-1.5 rounded-full transition-all ${index === activeSlide ? "w-9 bg-[#ef806d]" : "w-5 bg-white/60 hover:bg-[#72e0f5]"}`}
               key={slide.image}
               onClick={() => setActiveSlide(index)}
               aria-label={`Show industry image ${index + 1}`}
@@ -377,7 +377,7 @@ export function Industries({ onOpenAudit }: { onOpenAudit: () => void }) {
             />
           ))}
           <button
-            className="grid h-7 w-7 place-items-center rounded-full border border-white/40 bg-[#102a43]/80 text-xs text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
+            className="grid h-8 w-8 place-items-center rounded-full border border-white/40 bg-[#102a43]/80 text-sm text-[#f5fbff] transition-colors hover:border-[#72e0f5] hover:text-[#72e0f5]"
             onClick={() => setActiveSlide((activeSlide + 1) % slides.length)}
             aria-label="Next industry image"
           >
