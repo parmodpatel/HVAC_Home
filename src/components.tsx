@@ -78,12 +78,19 @@ export function Hero({
 export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
   return (
     <section
-      className="grid grid-cols-[1fr_2.3fr] gap-[70px] border-t border-[#72e0f5]/30 bg-[#e8f7fa] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
+      className="grid grid-cols-[1.15fr_2fr] gap-[80px] border-t border-[#72e0f5]/30 bg-[#e8f7fa] px-[12vw] py-[130px] text-[#102a43] max-[700px]:block max-[700px]:px-[8vw] max-[700px]:py-[85px]"
       id="about"
     >
-      <p className={`${mono} text-[#ef806d] max-[700px]:mb-[45px]`}>
-        The Airside approach
-      </p>
+      <div className="max-[700px]:mb-[45px]">
+        <p className={`${mono} text-[#ef806d]`}>The Airside approach</p>
+        <div className="mt-8 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] shadow-[0_16px_32px_rgba(16,42,67,.12)]">
+          <img
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            src="/assets/T4Tbhq229fcOaGIe9g4x7gCXKIhoXbRvMHMWwy3dxXpbUuEscMSSMbJpUC5Wa4dcYp6PQwUsftdC7sVcdmFo3VLX6_quMLSzcr6LvHbf-yJW23Xmj2s15qQhZeosSmJhEs3rZWBmr097kooVjWMr3dU-3pFvbVYnnPMdXKaDgLU.jpeg"
+            alt="Commercial HVAC technicians at work"
+          />
+        </div>
+      </div>
       <div>
         <h2 className="mb-8 text-[clamp(42px,5vw,70px)] font-medium leading-[.98] tracking-[-2px]">
           Marketing built for
@@ -102,6 +109,25 @@ export function Intro({ onOpenAudit }: { onOpenAudit: () => void }) {
         >
           Why Airside
         </button>
+        <div className="mt-10 grid max-w-[680px] grid-cols-[1.35fr_.65fr] gap-3 max-[700px]:grid-cols-1">
+          <div className="relative h-[220px] overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] max-[700px]:h-[190px]">
+            <img
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              src="/assets/upGm44GETjY3a1k_R3Bzk8gyCOpZllm8arrzKAc9nxxbKVbCHqUdmR9OLIXwh_Cl9VuwbKR6uE6kAcvHrHxP3pkQGhimhnm5C0MOlAQqTXXnnY_QQyHXtONBTn2LtOYOh3mOwXizT2q1v5mHj5XFkwfsMTa2ypZZpjBesVYpmdQ.jpeg"
+              alt="HVAC marketing planning session"
+            />
+            <span className="absolute bottom-3 left-3 rounded-full bg-[#102a43]/85 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[1px] text-[#8be9f5]">
+              Strategy that converts
+            </span>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-[#b8d4dc] bg-[#cfe8ee] max-[700px]:h-[190px]">
+            <img
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              src="/assets/6zzljXHMLFM720bX1MupGngVHcgFDI90CJDd77qzGZeTq6RFMsxEj2zmLzAIfVxE8HSAPKS6YpUumKRQVz8shv-qzKDhocT_p9DtArOUTrPDY0jhSZJkQ9oj5QuLUp_b74kpOlcA6yFIRaTX0JVh7KD5-lYW8KviNcMnWN6bHGE.jpeg"
+              alt="Modern residential HVAC system"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
