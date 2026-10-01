@@ -33,7 +33,7 @@ export function Hero({
         alt=""
       />
       <div className="relative max-w-[730px]">
-        <p className={`${mono} text-[#72e0f5] max-[700px]:hidden`}>
+        <p className={`${mono} text-[#72e0f5]  max-[700px]:hidden`}>
           <span className="mr-3 inline-block h-px w-[30px] bg-[#72e0f5] align-middle" />{" "}
           HVAC growth partner / Est. 2014
         </p>
